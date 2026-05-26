@@ -664,12 +664,13 @@
       }
     }
 
-/* MOBILE RESPONSIVE FIX */
-
 @media(max-width:768px){
 
   header{
-    padding:12px 4%;
+    padding:10px 15px;
+    position:sticky;
+    top:0;
+    z-index:999;
   }
 
   .navbar{
@@ -679,72 +680,66 @@
 
   .logo-area{
     width:100%;
+    display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
   }
+
+  /* SMALL LOGO */
 
   .logo{
-    width:60px;
-    height:60px;
-    border-width:3px;
+    width:65px;
+    height:65px;
+    min-width:65px;
   }
 
+  /* SMALL TITLE */
+
   .logo-text h1{
-    font-size:16px;
-    line-height:1.4;
+    font-size:15px;
+    line-height:1.25;
+    font-weight:700;
   }
 
   .logo-text p{
-    font-size:11px;
+    font-size:10px;
+    line-height:1.4;
+    margin-top:4px;
   }
+
+  /* MENU */
 
   nav{
     width:100%;
-    margin-top:15px;
+    margin-top:10px;
   }
 
   nav ul{
-    gap:18px;
-    flex-wrap:wrap;
-    justify-content:flex-start;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:nowrap;
   }
 
   nav ul li a{
     font-size:14px;
   }
 
+  /* HERO SECTION */
+
   .hero{
-    min-height:85vh;
-    padding:120px 20px 70px;
-    background-attachment:scroll;
+    min-height:80vh;
+    padding-top:40px;
   }
 
   .hero h2{
-    font-size:34px;
-    line-height:1.2;
+    font-size:42px;
+    line-height:1.15;
   }
 
   .hero p{
     font-size:16px;
-    line-height:1.8;
-  }
-
-  .btn-group{
-    flex-direction:column;
-    width:100%;
-  }
-
-  .btn{
-    width:100%;
-    font-size:16px;
-    padding:15px 20px;
-  }
-
-  .courses,
-  .contact-grid,
-  .feature-wrap,
-  .why-grid{
-    grid-template-columns:1fr;
+    line-height:1.7;
   }
 
 }
