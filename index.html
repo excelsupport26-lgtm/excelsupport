@@ -34,6 +34,22 @@ body{
   width:100%;
 }
 
+/* REGISTRATION BADGE */
+
+.registration-badge{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#001d5a;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:10px;
+  font-weight:800;
+  font-size:18px;
+  z-index:100;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
 /* HEADER */
 
 header{
@@ -184,6 +200,17 @@ nav ul li a:hover{
   0 2px 15px rgba(0,0,0,0.85);
 }
 
+/* CTA HEADLINE */
+
+.hero-cta-headline{
+  font-size:48px;
+  font-weight:900;
+  color:#0dd65e;
+  margin:30px 0 20px;
+  text-shadow:0 3px 15px rgba(0,0,0,0.8);
+  letter-spacing:1px;
+}
+
 /* BUTTON */
 
 .btn-group{
@@ -191,6 +218,7 @@ nav ul li a:hover{
   gap:20px;
   justify-content:center;
   flex-wrap:wrap;
+  margin:30px 0;
 }
 
 .btn{
@@ -316,6 +344,7 @@ section{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:25px;
+  margin-bottom:60px;
 }
 
 .feature-box{
@@ -347,6 +376,59 @@ section{
 .feature-box p{
   line-height:1.7;
   font-size:15px;
+}
+
+/* HIGHLIGHTS GRID */
+
+.highlights-section{
+  background:#f0f8ff;
+  padding:80px 7%;
+  border-radius:30px;
+  margin:60px 7%;
+}
+
+.highlights-title{
+  text-align:center;
+  font-size:42px;
+  color:#001d5a;
+  font-weight:800;
+  margin-bottom:60px;
+}
+
+.highlights-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+
+.highlight-item{
+  background:#fff;
+  padding:40px 25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transition:.3s;
+  border-top:5px solid #0dd65e;
+}
+
+.highlight-item:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+.highlight-item i{
+  font-size:54px;
+  color:#0dd65e;
+  margin-bottom:20px;
+  display:block;
+}
+
+.highlight-item h4{
+  font-size:20px;
+  color:#001d5a;
+  font-weight:800;
+  text-transform:uppercase;
+  line-height:1.4;
 }
 
 /* WHY US */
@@ -479,11 +561,24 @@ footer{
   justify-content:center;
   text-decoration:none;
   box-shadow:0 5px 18px rgba(0,0,0,.3);
+  transition:.3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
 }
 
 /* RESPONSIVE */
 
 @media(max-width:768px){
+
+  .registration-badge{
+    position:static;
+    display:inline-block;
+    margin-bottom:15px;
+    font-size:14px;
+    padding:10px 15px;
+  }
 
   header{
     padding:8px 12px;
@@ -545,6 +640,11 @@ footer{
     line-height:1.7;
   }
 
+  .hero-cta-headline{
+    font-size:28px;
+    margin:20px 0 15px;
+  }
+
   .btn-group{
     flex-direction:column;
     width:100%;
@@ -579,6 +679,10 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .highlights-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
   .cta h2{
     font-size:32px;
   }
@@ -587,12 +691,25 @@ footer{
     font-size:16px;
   }
 
+  .highlights-section{
+    margin:30px 0;
+    padding:50px 20px;
+  }
+
+  .highlights-title{
+    font-size:28px;
+    margin-bottom:40px;
+  }
+
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- REGISTRATION BADGE -->
+<div class="registration-badge">Regd. 2003</div>
 
 <div class="container">
 
@@ -641,6 +758,8 @@ Learn professional Excel skills used in real companies for reports,
 data handling, dashboards, analysis, management and office work.
 100% Job Oriented Practical Training.
 </p>
+
+<div class="hero-cta-headline">LEARN TODAY - GET BETTER JOB TOMORROW! 🚀</div>
 
 <div class="btn-group">
 
@@ -735,6 +854,68 @@ computer knowledge and career opportunities.
 </div>
 
 </section>
+
+<!-- BENEFITS/HIGHLIGHTS -->
+
+<div class="highlights-section">
+
+<div class="highlights-title">Why Choose Our Training? 🎯</div>
+
+<div class="highlights-grid">
+
+<div class="highlight-item">
+<i class="fa-solid fa-briefcase"></i>
+<h4>Most In-Demand Skill For Office & Corporate Jobs</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-chart-line"></i>
+<h4>High Demand in Companies</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-user-tie"></i>
+<h4>Improve Your Job Opportunities & Career Growth</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-handshake"></i>
+<h4>Useful For All Office & Corporate Jobs</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-certificate"></i>
+<h4>Certificate Available</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-chalkboard-user"></i>
+<h4>Experienced Trainers</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-laptop"></i>
+<h4>Practical Training</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-hourglass-half"></i>
+<h4>Flexible Timings</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-people-group"></i>
+<h4>Small Batches</h4>
+</div>
+
+<div class="highlight-item">
+<i class="fa-solid fa-headset"></i>
+<h4>Doubt Support</h4>
+</div>
+
+</div>
+
+</div>
 
 <!-- FEATURES -->
 
@@ -917,7 +1098,7 @@ WhatsApp Support Available
 
 <!-- WHATSAPP -->
 
-<a href="https://wa.me/918882442611" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/918882442611" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
