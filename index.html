@@ -1,1539 +1,1146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>WDEFI - Advance Excel Training</title>
-
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- FONT AWESOME -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-html{
-  scroll-behavior:auto;
-}
-
-body{
-  background:#f5f7fb;
-  color:#111;
-  overflow-x:hidden;
-  width:100%;
-}
-
-.container{
-  width:100%;
-  max-width:100%;
-}
-
-/* REGISTRATION BADGE */
-
-.registration-badge{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#001d5a;
-  color:#fff;
-  padding:15px 25px;
-  border-radius:10px;
-  font-weight:800;
-  font-size:18px;
-  z-index:100;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* HEADER */
-
-header{
-  background:linear-gradient(135deg,#001d5a,#003ea8);
-  color:#fff;
-  padding:18px 6%;
-  position:sticky;
-  top:0;
-  z-index:999;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  width:100%;
-}
-
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  flex-shrink:0;
-}
-
-.logo{
-  width:85px;
-  height:85px;
-  border-radius:50%;
-  background:#fff;
-  overflow:hidden;
-  border:4px solid #0dd65e;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  box-shadow:0 8px 20px rgba(13,214,94,0.4);
-}
-
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.logo-text h1{
-  font-size:30px;
-  font-weight:800;
-  line-height:1.2;
-}
-
-.logo-text p{
-  color:#d8e6ff;
-  margin-top:5px;
-  font-size:14px;
-}
-
-nav ul{
-  display:flex;
-  gap:30px;
-  list-style:none;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-nav ul li a{
-  color:white;
-  text-decoration:none;
-  font-weight:500;
-  transition:.3s;
-  white-space:nowrap;
-}
-
-nav ul li a:hover{
-  color:#0dd65e;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  background:
-  linear-gradient(
-    rgba(0,18,55,0.78),
-    rgba(0,25,75,0.82)
-  ),
-  url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1800&auto=format&fit=crop');
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-
-  padding:60px 20px;
-
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-  width:100%;
-}
-
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-
-  background:
-  radial-gradient(circle at 20% 30%, rgba(0,255,110,0.12), transparent 35%),
-  radial-gradient(circle at 80% 70%, rgba(0,255,110,0.10), transparent 35%);
-
-  pointer-events:none;
-}
-
-.hero-content{
-  max-width:1100px;
-  position:relative;
-  z-index:2;
-  width:100%;
-}
-
-.hero h2{
-  font-size:78px;
-  line-height:1.1;
-  font-weight:800;
-  margin-bottom:28px;
-  color:#fff;
-  letter-spacing:-2px;
-
-  text-shadow:
-  0 6px 25px rgba(0,0,0,0.7);
-}
-
-.hero h2 span{
-  color:#00c853;
-  text-shadow:none;
-}
-
-.hero p{
-  font-size:22px;
-  line-height:1.9;
-  color:#f1f5ff;
-  max-width:950px;
-  margin:auto auto 40px;
-
-  text-shadow:
-  0 2px 15px rgba(0,0,0,0.85);
-}
-
-/* CTA HEADLINE */
-
-.hero-cta-headline{
-  font-size:48px;
-  font-weight:900;
-  color:#0dd65e;
-  margin:30px 0 20px;
-  text-shadow:0 3px 15px rgba(0,0,0,0.8);
-  letter-spacing:1px;
-}
-
-/* BUTTON */
-
-.btn-group{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin:30px 0;
-  width:100%;
-}
-
-.btn{
-  padding:16px 34px;
-  border:none;
-  border-radius:50px;
-  font-size:18px;
-  cursor:pointer;
-  text-decoration:none;
-  transition:.3s;
-  font-weight:700;
-  display:inline-block;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
-  white-space:nowrap;
-}
-
-.btn-primary{
-  background:#0dd65e;
-  color:#000;
-}
-
-.btn-primary:hover{
-  background:#fff;
-  transform:translateY(-3px);
-}
-
-.btn-secondary{
-  background:#fff;
-  color:#001d5a;
-}
-
-.btn-secondary:hover{
-  background:#0dd65e;
-  color:#000;
-  transform:translateY(-3px);
-}
-
-.btn-tertiary{
-  background:#003ea8;
-  color:#fff;
-  border:2px solid #0dd65e;
-}
-
-.btn-tertiary:hover{
-  background:#0dd65e;
-  color:#001d5a;
-  transform:translateY(-3px);
-}
-
-/* SECTION */
-
-section{
-  padding:90px 7%;
-  width:100%;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.section-title h2{
-  font-size:48px;
-  color:#001d5a;
-  margin-bottom:15px;
-  font-weight:800;
-}
-
-.section-title p{
-  max-width:850px;
-  margin:auto;
-  color:#555;
-  line-height:1.8;
-  font-size:18px;
-}
-
-/* COURSE BOX */
-
-.courses{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
-  width:100%;
-}
-
-.course-card{
-  background:#fff;
-  border-radius:20px;
-  padding:35px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-  transition:.4s;
-  border-top:7px solid #0dd65e;
-  width:100%;
-}
-
-.course-card:hover{
-  transform:translateY(-10px);
-}
-
-.course-card h3{
-  font-size:30px;
-  color:#001d5a;
-  margin-bottom:25px;
-}
-
-.course-card ul{
-  list-style:none;
-}
-
-.course-card ul li{
-  margin-bottom:16px;
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  line-height:1.6;
-  font-size:17px;
-}
-
-.course-card ul li i{
-  color:#0dd65e;
-  margin-top:5px;
-  flex-shrink:0;
-}
-
-/* FEATURES */
-
-.feature-wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
-  margin-bottom:60px;
-  width:100%;
-}
-
-.feature-box{
-  background:#fff;
-  padding:35px 25px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.07);
-  transition:.3s;
-  width:100%;
-}
-
-.feature-box:hover{
-  background:#001d5a;
-  color:#fff;
-  transform:translateY(-8px);
-}
-
-.feature-box i{
-  font-size:48px;
-  margin-bottom:20px;
-  color:#0dd65e;
-}
-
-.feature-box h4{
-  font-size:22px;
-  margin-bottom:10px;
-}
-
-.feature-box p{
-  line-height:1.7;
-  font-size:15px;
-}
-
-/* HIGHLIGHTS GRID */
-
-.highlights-section{
-  background:#f0f8ff;
-  padding:80px 7%;
-  border-radius:30px;
-  margin:60px 7%;
-  width:auto;
-}
-
-.highlights-title{
-  text-align:center;
-  font-size:42px;
-  color:#001d5a;
-  font-weight:800;
-  margin-bottom:60px;
-}
-
-.highlights-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
-  width:100%;
-}
-
-.highlight-item{
-  background:#fff;
-  padding:40px 25px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  transition:.3s;
-  border-top:5px solid #0dd65e;
-  width:100%;
-}
-
-.highlight-item:hover{
-  transform:translateY(-8px);
-  box-shadow:0 12px 35px rgba(0,0,0,.15);
-}
-
-.highlight-item i{
-  font-size:54px;
-  color:#0dd65e;
-  margin-bottom:20px;
-  display:block;
-}
-
-.highlight-item h4{
-  font-size:20px;
-  color:#001d5a;
-  font-weight:800;
-  text-transform:uppercase;
-  line-height:1.4;
-}
-
-/* WHY US */
-
-.why-us{
-  background:#001d5a;
-  color:#fff;
-  border-radius:30px;
-  width:100%;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:50px;
-  width:100%;
-}
-
-.why-item{
-  background:rgba(255,255,255,.08);
-  padding:30px;
-  border-radius:20px;
-  width:100%;
-}
-
-.why-item h3{
-  color:#0dd65e;
-  margin-bottom:15px;
-  font-size:24px;
-}
-
-.why-item p{
-  line-height:1.8;
-  color:#eee;
-}
-
-/* CTA */
-
-.cta{
-  background:linear-gradient(135deg,#0dd65e,#04a549);
-  text-align:center;
-  color:#fff;
-  border-radius:30px;
-  padding:80px 40px;
-  width:100%;
-  margin:60px auto;
-  max-width:1200px;
-}
-
-.cta h2{
-  font-size:52px;
-  margin-bottom:20px;
-  font-weight:800;
-}
-
-.cta p{
-  font-size:20px;
-  max-width:900px;
-  margin:auto;
-  line-height:1.8;
-  margin-bottom:35px;
-}
-
-.cta .btn-group{
-  justify-content:center;
-}
-
-/* CONTACT */
-
-.contact{
-  background:#fff;
-  width:100%;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-  gap:40px;
-  width:100%;
-}
-
-.contact-box{
-  background:#f8fbff;
-  padding:40px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.06);
-  width:100%;
-}
-
-.contact-box h3{
-  font-size:32px;
-  margin-bottom:25px;
-  color:#001d5a;
-}
-
-.contact-box p{
-  margin-bottom:18px;
-  line-height:1.8;
-  font-size:17px;
-}
-
-.contact-box i{
-  color:#0dd65e;
-  margin-right:12px;
-}
-
-.contact-box a{
-  display:inline-block;
-  margin-top:15px;
-}
-
-/* FOOTER */
-
-footer{
-  background:#00153f;
-  color:#fff;
-  text-align:center;
-  padding:30px 20px;
-  font-size:15px;
-  width:100%;
-}
-
-/* WHATSAPP */
-
-.whatsapp-float{
-  position:fixed;
-  width:65px;
-  height:65px;
-  bottom:25px;
-  right:25px;
-  background:#25d366;
-  color:#fff;
-  border-radius:50%;
-  text-align:center;
-  font-size:34px;
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  box-shadow:0 5px 18px rgba(0,0,0,.3);
-  transition:.3s;
-}
-
-.whatsapp-float:hover{
-  transform:scale(1.1);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1024px){
-  .highlights-section{
-    margin:60px 0;
-    padding:60px 5%;
-  }
-
-  section{
-    padding:70px 5%;
-  }
-
-  .cta{
-    margin:50px 5%;
-    padding:60px 30px;
-  }
-}
-
-@media(max-width:768px){
-
-  body{
-    width:100%;
-    overflow-x:hidden;
-  }
-
-  .registration-badge{
-    position:static;
-    display:inline-block;
-    margin-bottom:15px;
-    font-size:14px;
-    padding:10px 15px;
-    width:auto;
-  }
-
-  header{
-    padding:12px 20px;
-    width:100%;
-  }
-
-  .navbar{
-    flex-direction:column;
-    align-items:stretch;
-    gap:10px;
-  }
-
-  .logo-area{
-    width:100%;
-    gap:12px;
-  }
-
-  .logo{
-    width:60px;
-    height:60px;
-    min-width:60px;
-  }
-
-  .logo-text h1{
-    font-size:14px;
-    line-height:1.2;
-  }
-
-  .logo-text p{
-    font-size:10px;
-  }
-
-  nav{
-    width:100%;
-    margin-top:10px;
-  }
-
-  nav ul{
-    width:100%;
-    justify-content:flex-start;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-
-  nav ul li a{
-    font-size:13px;
-  }
-
-  .hero{
-    min-height:70vh;
-    padding:30px 15px;
-    background-attachment:scroll;
-    width:100%;
-  }
-
-  .hero h2{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:15px;
-  }
-
-  .hero p{
-    font-size:15px;
-    line-height:1.6;
-    margin:auto auto 25px;
-  }
-
-  .hero-cta-headline{
-    font-size:22px;
-    margin:15px 0 15px;
-  }
-
-  .btn-group{
-    flex-direction:column;
-    width:100%;
-    gap:12px;
-  }
-
-  .btn{
-    width:100%;
-    font-size:15px;
-    padding:14px 20px;
-  }
-
-  section{
-    padding:60px 20px;
-    width:100%;
-  }
-
-  .section-title h2{
-    font-size:28px;
-  }
-
-  .section-title p{
-    font-size:15px;
-  }
-
-  .courses{
-    grid-template-columns:1fr;
-  }
-
-  .feature-wrap{
-    grid-template-columns:1fr;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .highlights-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .highlight-item{
-    padding:25px 15px;
-  }
-
-  .highlight-item i{
-    font-size:40px;
-  }
-
-  .highlight-item h4{
-    font-size:13px;
-  }
-
-  .highlights-section{
-    margin:40px 0;
-    padding:40px 20px;
-    border-radius:20px;
-  }
-
-  .highlights-title{
-    font-size:24px;
-    margin-bottom:30px;
-  }
-
-  .cta{
-    margin:40px 0;
-    padding:50px 20px;
-    border-radius:20px;
-  }
-
-  .cta h2{
-    font-size:28px;
-  }
-
-  .cta p{
-    font-size:15px;
-  }
-
-  .contact-box{
-    padding:25px;
-  }
-
-  .contact-box h3{
-    font-size:22px;
-  }
-
-  .contact-box p{
-    font-size:14px;
-  }
-
-  .feature-box{
-    padding:25px;
-  }
-
-  .feature-box i{
-    font-size:40px;
-  }
-
-  .feature-box h4{
-    font-size:18px;
-  }
-
-  .feature-box p{
-    font-size:14px;
-  }
-
-  .course-card{
-    padding:25px;
-  }
-
-  .course-card h3{
-    font-size:22px;
-  }
-
-  .course-card ul li{
-    font-size:15px;
-  }
-
-  .why-item h3{
-    font-size:20px;
-  }
-
-  .why-item p{
-    font-size:14px;
-  }
-
-  .whatsapp-float{
-    width:55px;
-    height:55px;
-    bottom:15px;
-    right:15px;
-    font-size:28px;
-  }
-
-  footer{
-    padding:20px 15px;
-    font-size:13px;
-  }
-}
-
-@media(max-width:480px){
-
-  header{
-    padding:10px 15px;
-  }
-
-  .navbar{
-    gap:8px;
-  }
-
-  .logo-area{
-    gap:8px;
-  }
-
-  .logo{
-    width:50px;
-    height:50px;
-  }
-
-  .logo-text h1{
-    font-size:12px;
-  }
-
-  .logo-text p{
-    font-size:8px;
-  }
-
-  nav ul{
-    gap:5px;
-  }
-
-  nav ul li a{
-    font-size:11px;
-  }
-
-  .hero{
-    min-height:60vh;
-    padding:20px 12px;
-  }
-
-  .hero h2{
-    font-size:24px;
-    margin-bottom:12px;
-  }
-
-  .hero p{
-    font-size:13px;
-    margin:auto auto 15px;
-  }
-
-  .hero-cta-headline{
-    font-size:18px;
-  }
-
-  .btn-group{
-    gap:8px;
-  }
-
-  .btn{
-    font-size:13px;
-    padding:12px 18px;
-  }
-
-  section{
-    padding:50px 15px;
-  }
-
-  .section-title h2{
-    font-size:22px;
-  }
-
-  .section-title p{
-    font-size:13px;
-  }
-
-  .highlights-grid{
-    grid-template-columns:1fr;
-  }
-
-  .highlights-section{
-    margin:30px 0;
-    padding:30px 15px;
-  }
-
-  .highlights-title{
-    font-size:20px;
-    margin-bottom:20px;
-  }
-
-  .highlight-item{
-    padding:20px 12px;
-  }
-
-  .highlight-item i{
-    font-size:35px;
-  }
-
-  .highlight-item h4{
-    font-size:12px;
-  }
-
-  .cta{
-    margin:30px 0;
-    padding:40px 15px;
-  }
-
-  .cta h2{
-    font-size:22px;
-  }
-
-  .cta p{
-    font-size:13px;
-  }
-
-  .contact-box{
-    padding:20px;
-  }
-
-  .contact-box h3{
-    font-size:18px;
-  }
-
-  .course-card{
-    padding:20px;
-  }
-
-  .course-card h3{
-    font-size:18px;
-  }
-
-  .course-card ul li{
-    font-size:13px;
-    margin-bottom:12px;
-  }
-
-  .feature-box{
-    padding:20px;
-  }
-
-  .feature-box i{
-    font-size:35px;
-  }
-
-  .whatsapp-float{
-    width:50px;
-    height:50px;
-    font-size:24px;
-  }
-
-  .registration-badge{
-    font-size:12px;
-    padding:8px 12px;
-  }
-
-  footer{
-    padding:15px 10px;
-    font-size:12px;
-  }
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WDEFI - Advance Excel Training</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f5f7fb;
+      color:#111;
+      overflow-x:hidden;
+      width:100%;
+    }
+
+    .container{
+      width:100%;
+      max-width:100%;
+    }
+
+    /* REGISTRATION BADGE */
+    .registration-badge{
+      position:fixed;
+      top:20px;
+      right:20px;
+      background:#001d5a;
+      color:#fff;
+      padding:15px 25px;
+      border-radius:10px;
+      font-weight:800;
+      font-size:18px;
+      z-index:1000;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* HEADER */
+    header{
+      background:linear-gradient(135deg,#001d5a,#003ea8);
+      color:#fff;
+      padding:18px 6%;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+      width:100%;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      flex-shrink:0;
+    }
+
+    .logo{
+      width:85px;
+      height:85px;
+      border-radius:50%;
+      background:#fff;
+      overflow:hidden;
+      border:4px solid #0dd65e;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      box-shadow:0 8px 20px rgba(13,214,94,0.4);
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .logo-text h1{
+      font-size:30px;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .logo-text p{
+      color:#d8e6ff;
+      margin-top:5px;
+      font-size:14px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:.3s;
+      white-space:nowrap;
+    }
+
+    nav ul li a:hover{
+      color:#0dd65e;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      background: linear-gradient(rgba(0,18,55,0.78), rgba(0,25,75,0.82)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1800&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:60px 20px;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      width:100%;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 20% 30%, rgba(0,255,110,0.12), transparent 35%), radial-gradient(circle at 80% 70%, rgba(0,255,110,0.10), transparent 35%);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      max-width:1100px;
+      position:relative;
+      z-index:2;
+      width:100%;
+    }
+
+    .hero h2{
+      font-size:78px;
+      line-height:1.1;
+      font-weight:800;
+      margin-bottom:28px;
+      color:#fff;
+      letter-spacing:-2px;
+      text-shadow: 0 6px 25px rgba(0,0,0,0.7);
+    }
+
+    .hero h2 span{
+      color:#00c853;
+      text-shadow:none;
+    }
+
+    .hero p{
+      font-size:22px;
+      line-height:1.9;
+      color:#f1f5ff;
+      max-width:950px;
+      margin:auto auto 40px;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.85);
+    }
+
+    /* CTA HEADLINE */
+    .hero-cta-headline{
+      font-size:48px;
+      font-weight:900;
+      color:#0dd65e;
+      margin:30px 0 20px;
+      text-shadow:0 3px 15px rgba(0,0,0,0.8);
+      letter-spacing:1px;
+    }
+
+    /* BUTTON */
+    .btn-group{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:30px 0;
+      width:100%;
+    }
+
+    .btn{
+      padding:16px 34px;
+      border:none;
+      border-radius:50px;
+      font-size:18px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:.3s;
+      font-weight:700;
+      display:inline-block;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:#0dd65e;
+      color:#000;
+    }
+
+    .btn-primary:hover{
+      background:#fff;
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#001d5a;
+    }
+
+    .btn-secondary:hover{
+      background:#0dd65e;
+      color:#000;
+      transform:translateY(-3px);
+    }
+
+    .btn-tertiary{
+      background:#003ea8;
+      color:#fff;
+      border:2px solid #0dd65e;
+    }
+
+    .btn-tertiary:hover{
+      background:#0dd65e;
+      color:#001d5a;
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+    section{
+      padding:90px 7%;
+      width:100%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:48px;
+      color:#001d5a;
+      margin-bottom:15px;
+      font-weight:800;
+    }
+
+    .section-title p{
+      max-width:850px;
+      margin:auto;
+      color:#555;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* COURSE BOX */
+    .courses{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      width:100%;
+    }
+
+    .course-card{
+      background:#fff;
+      border-radius:20px;
+      padding:35px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.4s;
+      border-top:7px solid #0dd65e;
+      width:100%;
+    }
+
+    .course-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .course-card h3{
+      font-size:30px;
+      color:#001d5a;
+      margin-bottom:25px;
+    }
+
+    .course-card ul{
+      list-style:none;
+    }
+
+    .course-card ul li{
+      margin-bottom:16px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      line-height:1.6;
+      font-size:17px;
+    }
+
+    .course-card ul li i{
+      color:#0dd65e;
+      margin-top:5px;
+      flex-shrink:0;
+    }
+
+    /* FEATURES */
+    .feature-wrap{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+      margin-bottom:60px;
+      width:100%;
+    }
+
+    .feature-box{
+      background:#fff;
+      padding:35px 25px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,.07);
+      transition:.3s;
+      width:100%;
+    }
+
+    .feature-box:hover{
+      background:#001d5a;
+      color:#fff;
+      transform:translateY(-8px);
+    }
+
+    .feature-box i{
+      font-size:48px;
+      margin-bottom:20px;
+      color:#0dd65e;
+    }
+
+    .feature-box h4{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .feature-box p{
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    /* HIGHLIGHTS GRID */
+    .highlights-section{
+      background:#f0f8ff;
+      padding:80px 7%;
+      border-radius:30px;
+      margin:60px 7%;
+      width:auto;
+    }
+
+    .highlights-title{
+      text-align:center;
+      font-size:42px;
+      color:#001d5a;
+      font-weight:800;
+      margin-bottom:60px;
+    }
+
+    .highlights-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+      width:100%;
+    }
+
+    .highlight-item{
+      background:#fff;
+      padding:40px 25px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,.08);
+      transition:.3s;
+      border-top:5px solid #0dd65e;
+      width:100%;
+    }
+
+    .highlight-item:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 35px rgba(0,0,0,.15);
+    }
+
+    .highlight-item i{
+      font-size:54px;
+      color:#0dd65e;
+      margin-bottom:20px;
+      display:block;
+    }
+
+    .highlight-item h4{
+      font-size:20px;
+      color:#001d5a;
+      font-weight:800;
+      text-transform:uppercase;
+      line-height:1.4;
+    }
+
+    /* WHY US */
+    .why-us{
+      background:#001d5a;
+      color:#fff;
+      border-radius:30px;
+      width:100%;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:50px;
+      width:100%;
+    }
+
+    .why-item{
+      background:rgba(255,255,255,.08);
+      padding:30px;
+      border-radius:20px;
+      width:100%;
+    }
+
+    .why-item h3{
+      color:#0dd65e;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .why-item p{
+      line-height:1.8;
+      color:#eee;
+    }
+
+    /* CTA */
+    .cta{
+      background:linear-gradient(135deg,#0dd65e,#04a549);
+      text-align:center;
+      color:#fff;
+      border-radius:30px;
+      padding:80px 40px;
+      width:100%;
+      margin:60px auto;
+      max-width:1200px;
+    }
+
+    .cta h2{
+      font-size:52px;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .cta p{
+      font-size:20px;
+      max-width:900px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .cta .btn-group{
+      justify-content:center;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:#fff;
+      width:100%;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:40px;
+      width:100%;
+    }
+
+    .contact-box{
+      background:#f8fbff;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.06);
+      width:100%;
+    }
+
+    .contact-box h3{
+      font-size:32px;
+      margin-bottom:25px;
+      color:#001d5a;
+    }
+
+    .contact-box p{
+      margin-bottom:18px;
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    .contact-box i{
+      color:#0dd65e;
+      margin-right:12px;
+    }
+
+    .contact-box a{
+      display:inline-block;
+      margin-top:15px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#00153f;
+      color:#fff;
+      text-align:center;
+      padding:30px 20px;
+      font-size:15px;
+      width:100%;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      color:#fff;
+      border-radius:50%;
+      text-align:center;
+      font-size:34px;
+      z-index:1000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      box-shadow:0 5px 18px rgba(0,0,0,.3);
+      transition:.3s;
+    }
+
+    .whatsapp-float:hover{
+      transform:scale(1.1);
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media(max-width:1024px){
+      .highlights-section{
+        margin:60px 0;
+        padding:60px 5%;
+      }
+      section{
+        padding:70px 5%;
+      }
+      .cta{
+        margin:50px 5%;
+        padding:60px 30px;
+      }
+    }
+
+    @media(max-width:768px){
+      body{
+        width:100%;
+        overflow-x:hidden;
+      }
+      .registration-badge{
+        position:static;
+        display:inline-block;
+        margin-bottom:15px;
+        font-size:14px;
+        padding:10px 15px;
+        width:auto;
+      }
+      header{
+        padding:12px 20px;
+        width:100%;
+      }
+      .navbar{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+      }
+      .logo-area{
+        width:100%;
+        gap:12px;
+      }
+      .logo{
+        width:60px;
+        height:60px;
+        min-width:60px;
+      }
+      .logo-text h1{
+        font-size:14px;
+        line-height:1.2;
+      }
+      .logo-text p{
+        font-size:10px;
+      }
+      nav{
+        width:100%;
+        margin-top:10px;
+      }
+      nav ul{
+        width:100%;
+        justify-content:flex-start;
+        gap:10px;
+        flex-wrap:wrap;
+      }
+      nav ul li a{
+        font-size:13px;
+      }
+      .hero{
+        min-height:70vh;
+        padding:30px 15px;
+        background-attachment:scroll;
+        width:100%;
+      }
+      .hero h2{
+        font-size:32px;
+        line-height:1.2;
+        margin-bottom:15px;
+      }
+      .hero p{
+        font-size:15px;
+        line-height:1.6;
+        margin:auto auto 25px;
+      }
+      .hero-cta-headline{
+        font-size:22px;
+        margin:15px 0 15px;
+      }
+      .btn-group{
+        flex-direction:column;
+        width:100%;
+        gap:12px;
+      }
+      .btn{
+        width:100%;
+        font-size:15px;
+        padding:14px 20px;
+      }
+      section{
+        padding:60px 20px;
+        width:100%;
+      }
+      .section-title h2{
+        font-size:28px;
+      }
+      .section-title p{
+        font-size:15px;
+      }
+      .courses{
+        grid-template-columns:1fr;
+      }
+      .feature-wrap{
+        grid-template-columns:1fr;
+      }
+      .why-grid{
+        grid-template-columns:1fr;
+      }
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .highlights-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .highlight-item{
+        padding:25px 15px;
+      }
+      .highlight-item i{
+        font-size:40px;
+      }
+      .highlight-item h4{
+        font-size:13px;
+      }
+      .highlights-section{
+        margin:40px 0;
+        padding:40px 20px;
+        border-radius:20px;
+      }
+      .highlights-title{
+        font-size:24px;
+        margin-bottom:30px;
+      }
+      .cta{
+        margin:40px 0;
+        padding:50px 20px;
+        border-radius:20px;
+      }
+      .cta h2{
+        font-size:28px;
+      }
+      .cta p{
+        font-size:15px;
+      }
+      .contact-box{
+        padding:25px;
+      }
+      .contact-box h3{
+        font-size:22px;
+      }
+      .contact-box p{
+        font-size:14px;
+      }
+      .feature-box{
+        padding:25px;
+      }
+      .feature-box i{
+        font-size:40px;
+      }
+      .feature-box h4{
+        font-size:18px;
+      }
+      .feature-box p{
+        font-size:14px;
+      }
+      .course-card{
+        padding:25px;
+      }
+      .course-card h3{
+        font-size:22px;
+      }
+      .course-card ul li{
+        font-size:15px;
+      }
+      .why-item h3{
+        font-size:20px;
+      }
+      .why-item p{
+        font-size:14px;
+      }
+      .whatsapp-float{
+        width:55px;
+        height:55px;
+        bottom:15px;
+        right:15px;
+        font-size:28px;
+      }
+      footer{
+        padding:20px 15px;
+        font-size:13px;
+      }
+    }
+
+    @media(max-width:480px){
+      header{
+        padding:10px 15px;
+      }
+      .navbar{
+        gap:8px;
+      }
+      .logo-area{
+        gap:8px;
+      }
+      .logo{
+        width:50px;
+        height:50px;
+      }
+      .logo-text h1{
+        font-size:12px;
+      }
+      .logo-text p{
+        font-size:8px;
+      }
+      nav ul{
+        gap:5px;
+      }
+      nav ul li a{
+        font-size:11px;
+      }
+      .hero{
+        min-height:60vh;
+        padding:20px 12px;
+      }
+      .hero h2{
+        font-size:24px;
+        margin-bottom:12px;
+      }
+      .hero p{
+        font-size:13px;
+        margin:auto auto 15px;
+      }
+      .hero-cta-headline{
+        font-size:18px;
+      }
+      .btn-group{
+        gap:8px;
+      }
+      .btn{
+        font-size:13px;
+        padding:12px 18px;
+      }
+      section{
+        padding:50px 15px;
+      }
+      .section-title h2{
+        font-size:22px;
+      }
+      .section-title p{
+        font-size:13px;
+      }
+      .highlights-grid{
+        grid-template-columns:1fr;
+      }
+      .highlights-section{
+        margin:30px 0;
+        padding:30px 15px;
+      }
+      .highlights-title{
+        font-size:20px;
+        margin-bottom:20px;
+      }
+      .highlight-item{
+        padding:20px 12px;
+      }
+      .highlight-item i{
+        font-size:35px;
+      }
+      .highlight-item h4{
+        font-size:12px;
+      }
+      .cta{
+        margin:30px 0;
+        padding:40px 15px;
+      }
+      .cta h2{
+        font-size:22px;
+      }
+      .cta p{
+        font-size:13px;
+      }
+      .contact-box{
+        padding:20px;
+      }
+      .contact-box h3{
+        font-size:18px;
+      }
+      .course-card{
+        padding:20px;
+      }
+      .course-card h3{
+        font-size:18px;
+      }
+      .course-card ul li{
+        font-size:13px;
+        margin-bottom:12px;
+      }
+      .feature-box{
+        padding:20px;
+      }
+      .feature-box i{
+        font-size:35px;
+      }
+      .whatsapp-float{
+        width:50px;
+        height:50px;
+        font-size:24px;
+      }
+      .registration-badge{
+        font-size:12px;
+        padding:8px 12px;
+      }
+      footer{
+        padding:15px 10px;
+        font-size:12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- REGISTRATION BADGE -->
-<div class="registration-badge">Regd. 2003</div>
-
-<div class="container">
-
-<!-- HEADER -->
-
-<header>
-
-<div class="navbar">
-
-<div class="logo-area">
-
-<div class="logo">
-<img src="https://raw.githubusercontent.com/excelsupport26-lgtm/excelsupport/main/logo.jpeg" alt="WDEFI Logo">
-</div>
-
-<div class="logo-text">
-<h1>The Welfare Development & Educational Foundation of India</h1>
-<p>Empowering Skills, Building Careers, Creating Better Future</p>
-</div>
-
-</div>
-
-<nav>
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#courses">Courses</a></li>
-<li><a href="#features">Benefits</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-</div>
-
-</header>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h2>ADVANCE <span>EXCEL</span> TRAINING</h2>
-
-<p>
-Learn professional Excel skills used in real companies for reports,
-data handling, dashboards, analysis, management and office work.
-100% Job Oriented Practical Training.
-</p>
-
-<div class="hero-cta-headline">LEARN TODAY - GET BETTER JOB TOMORROW! 🚀</div>
-
-<div class="btn-group">
-
-<a href="https://wa.me/918882442611" class="btn btn-primary" target="_blank">
-<i class="fab fa-whatsapp"></i> WhatsApp Now
-</a>
-
-<a href="#courses" class="btn btn-secondary">
-Explore Courses
-</a>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor" class="btn btn-tertiary" target="_blank">
-<i class="fa-solid fa-file-alt"></i> Google Form
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- COURSES -->
-
-<section id="courses">
-
-<div class="section-title">
-<h2>Our Training Courses</h2>
-<p>
-Practical industry-focused training designed to improve office skills,
-computer knowledge and career opportunities.
-</p>
-</div>
-
-<div class="courses">
-
-<div class="course-card">
-
-<h3>1. Advance Excel</h3>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Advanced Formulas & Functions</li>
-
-<li><i class="fa-solid fa-circle-check"></i> VLOOKUP / XLOOKUP / HLOOKUP</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Pivot Table & Pivot Chart</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Charts & Dashboards</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Data Validation</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Data Analysis</li>
-
-<li><i class="fa-solid fa-circle-check"></i> MIS Report Preparation</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Real Office Work Practice</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Excel From Basic to Advanced Level</li>
-
-</ul>
-
-</div>
-
-<div class="course-card">
-
-<h3>2. Basic Computer</h3>
-
-<ul>
-
-<li><i class="fa-solid fa-circle-check"></i> Computer Fundamentals</li>
-
-<li><i class="fa-solid fa-circle-check"></i> MS Office (Word, Excel, PowerPoint)</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Internet & Email</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Typing Practice</li>
-
-<li><i class="fa-solid fa-circle-check"></i> File Management</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Printer Handling</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Computer Shortcuts</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Practical & Real Life Use</li>
-
-<li><i class="fa-solid fa-circle-check"></i> Build Strong Computer Foundation</li>
-
-</ul>
-
-</div>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Course Section</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    background:#f3f3f3;
-    font-family:'Poppins', sans-serif;
-    padding:50px 40px;
-}
-
-.course-container{
-    display:flex;
-    gap:35px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.course-card{
-    width:600px;
-    background:#ffffff;
-    border-radius:22px;
-    padding:38px 35px;
-    position:relative;
-    overflow:hidden;
-    box-shadow:0 4px 15px rgba(0,0,0,0.06);
-}
-
-.course-card::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:7px;
-    background:#12c95a;
-}
-
-.course-title{
-    font-size:28px;
-    font-weight:800;
-    color:#082b73;
-    margin-bottom:28px;
-    line-height:1.3;
-}
-
-.course-list{
-    list-style:none;
-}
-
-.course-list li{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    margin-bottom:22px;
-    font-size:18px;
-    font-weight:500;
-    color:#2e2e2e;
-    line-height:1.5;
-}
-
-.icon{
-    width:22px;
-    height:22px;
-    min-width:22px;
-    border-radius:50%;
-    background:#12c95a;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:3px;
-}
-
-.icon::before{
-    content:"✓";
-    color:#ffffff;
-    font-size:13px;
-    font-weight:bold;
-}
-
-@media(max-width:768px){
-
-    body{
-        padding:20px;
-    }
-
-    .course-card{
-        width:100%;
-        padding:30px 25px;
-    }
-
-    .course-title{
-        font-size:24px;
-    }
-
-    .course-list li{
-        font-size:16px;
-    }
-
-}
-
-</style>
-
-<!-- BENEFITS/HIGHLIGHTS -->
-
-<div class="highlights-section">
-
-<div class="highlights-title">Why Choose Our Training? 🎯</div>
-
-<div class="highlights-grid">
-
-<div class="highlight-item">
-<i class="fa-solid fa-briefcase"></i>
-<h4>Most In-Demand Skill For Office & Corporate Jobs</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-chart-line"></i>
-<h4>High Demand in Companies</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-user-tie"></i>
-<h4>Improve Your Job Opportunities & Career Growth</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-handshake"></i>
-<h4>Useful For All Office & Corporate Jobs</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-certificate"></i>
-<h4>Certificate Available</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-chalkboard-user"></i>
-<h4>Experienced Trainers</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-laptop"></i>
-<h4>Practical Training</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-hourglass-half"></i>
-<h4>Flexible Timings</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-people-group"></i>
-<h4>Small Batches</h4>
-</div>
-
-<div class="highlight-item">
-<i class="fa-solid fa-headset"></i>
-<h4>Doubt Support</h4>
-</div>
-
-</div>
-
-</div>
-
-<!-- FEATURES -->
-
-<section id="features">
-
-<div class="section-title">
-<h2>Why This Course Is Useful?</h2>
-<p>
-Professional training that helps students, job seekers and working professionals.
-</p>
-</div>
-
-<div class="feature-wrap">
-
-<div class="feature-box">
-<i class="fa-solid fa-briefcase"></i>
-<h4>Office Job Skills</h4>
-<p>Most in-demand skills required in companies and offices.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-chart-line"></i>
-<h4>Career Growth</h4>
-<p>Improve job opportunities and salary growth with Excel expertise.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-user-graduate"></i>
-<h4>Practical Training</h4>
-<p>Hands-on live projects and real company work examples.</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-certificate"></i>
-<h4>Certificate</h4>
-<p>Course completion certificate available after training.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- WHY US -->
-
-<section>
-
-<div class="why-us">
-
-<div class="section-title" style="padding-top:40px;">
-<h2 style="color:white;">Why Choose WDEFI?</h2>
-
-<p style="color:#ddd;">
-Trusted training institute focused on practical skills and better career opportunities.
-</p>
-
-</div>
-
-<div class="why-grid">
-
-<div class="why-item">
-<h3>Experienced Trainers</h3>
-<p>Learn from skilled trainers with practical industry experience.</p>
-</div>
-
-<div class="why-item">
-<h3>Job Oriented Training</h3>
-<p>Focused on skills that companies actually use in offices.</p>
-</div>
-
-<div class="why-item">
-<h3>Real Practice</h3>
-<p>Hands-on assignments, dashboards and office-related projects.</p>
-</div>
-
-<div class="why-item">
-<h3>Doubt Support</h3>
-<p>Regular support and guidance during and after classes.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section style="padding:0;">
-
-<div class="cta" style="margin:60px 7%;">
-
-<h2>Ready to Transform Your Career? 🎓</h2>
-
-<p>
-Join hundreds of students who have improved their skills and landed better jobs.
-Start your Excel training journey today!
-</p>
-
-<div class="btn-group">
-
-<a href="https://wa.me/918882442611" class="btn btn-primary" target="_blank">
-<i class="fab fa-whatsapp"></i> WhatsApp for Details
-</a>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor" class="btn btn-secondary" target="_blank">
-Fill Registration Form
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<div class="section-title">
-<h2>Get in Touch</h2>
-<p>Have questions? Reach out to us through any of these channels.</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-box">
-<h3>📱 WhatsApp</h3>
-<p>Quick response on WhatsApp for all queries and enrollment.</p>
-<a href="https://wa.me/918882442611" target="_blank" class="btn btn-primary">
-<i class="fab fa-whatsapp"></i> Chat Now
-</a>
-</div>
-
-<div class="contact-box">
-    <h3>📧 Email</h3>
-    <p>Send us your queries and we will respond within 24 hours.</p>
-
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=excelsupport26@gmail.com"
-       target="_blank"
-       class="btn btn-primary">
-       
-       <i class="fa-solid fa-envelope"></i> Send Email
-    </a>
-</div>
-
-<div class="contact-box">
-<h3>📝 Registration</h3>
-
-<p>
-Fill out our registration form to get started with your training.
-</p>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor"
-target="_blank"
-class="btn btn-primary">
-
-<i class="fa-solid fa-file-alt"></i> Register Now
-
-</a>
-</div>
-
-
-<div class="contact-box">
-
-<h3>📍 Address</h3>
-
-<p>
-The Welfare Development & Educational Foundation of India (WDEFI)
-</p>
-
-<p>
-C-5, Satya Public School Road,<br>
-Qutub Vihar Phase-1, Near Dwarka Sec-19 B,<br>
-New Delhi - 110071
-</p>
-
-<a href="https://maps.google.com"
-target="_blank"
-class="btn btn-primary">
-
-<i class="fa-solid fa-location-dot"></i> View Location
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-<!-- WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/918882442611" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- FOOTER -->
-<footer>
-<p>&copy; 2003-2026 The Welfare Development & Educational Foundation of India (WDEFI). All rights reserved.</p>
-<p>Building Skills. Creating Opportunities. Transforming Lives.</p>
-</footer>
+  <div class="registration-badge">Regd. 2003</div>
+
+  <div class="container">
+
+    <header>
+      <div class="navbar">
+        <div class="logo-area">
+          <div class="logo">
+            <img src="https://raw.githubusercontent.com/excelsupport26-lgtm/excelsupport/main/logo.jpeg" alt="WDEFI Logo">
+          </div>
+          <div class="logo-text">
+            <h1>The Welfare Development & Educational Foundation of India</h1>
+            <p>Empowering Skills, Building Careers, Creating Better Future</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Benefits</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>ADVANCE <span>EXCEL</span> TRAINING</h2>
+        <p>
+          Learn professional Excel skills used in real companies for reports,
+          data handling, dashboards, analysis, management and office work.
+          100% Job Oriented Practical Training.
+        </p>
+        <div class="hero-cta-headline">LEARN TODAY - GET BETTER JOB TOMORROW! 🚀</div>
+        <div class="btn-group">
+          <a href="https://wa.me/918882442611" class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Now
+          </a>
+          <a href="#courses" class="btn btn-secondary">
+            Explore Courses
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor" class="btn btn-tertiary" target="_blank">
+            <i class="fa-solid fa-file-alt"></i> Google Form
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="section-title">
+        <h2>Our Training Courses</h2>
+        <p> Practical industry-focused training designed to improve office skills, computer knowledge and career opportunities. </p>
+      </div>
+      <div class="courses">
+        <div class="course-card">
+          <h3>1. Advance Excel</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Advanced Formulas & Functions</li>
+            <li><i class="fa-solid fa-circle-check"></i> VLOOKUP / XLOOKUP / HLOOKUP</li>
+            <li><i class="fa-solid fa-circle-check"></i> Pivot Table & Pivot Chart</li>
+            <li><i class="fa-solid fa-circle-check"></i> Charts & Dashboards</li>
+            <li><i class="fa-solid fa-circle-check"></i> Data Validation</li>
+            <li><i class="fa-solid fa-circle-check"></i> Data Analysis</li>
+            <li><i class="fa-solid fa-circle-check"></i> MIS Report Preparation</li>
+            <li><i class="fa-solid fa-circle-check"></i> Real Office Work Practice</li>
+            <li><i class="fa-solid fa-circle-check"></i> Excel From Basic to Advanced Level</li>
+          </ul>
+        </div>
+        <div class="course-card">
+          <h3>2. Basic Computer</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Computer Fundamentals</li>
+            <li><i class="fa-solid fa-circle-check"></i> MS Office (Word, Excel, PowerPoint)</li>
+            <li><i class="fa-solid fa-circle-check"></i> Internet & Email</li>
+            <li><i class="fa-solid fa-circle-check"></i> Typing Practice</li>
+            <li><i class="fa-solid fa-circle-check"></i> File Management</li>
+            <li><i class="fa-solid fa-circle-check"></i> Printer Handling</li>
+            <li><i class="fa-solid fa-circle-check"></i> Computer Shortcuts</li>
+            <li><i class="fa-solid fa-circle-check"></i> Practical & Real Life Use</li>
+            <li><i class="fa-solid fa-circle-check"></i> Build Strong Computer Foundation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="highlights-section">
+      <div class="highlights-title">Why Choose Our Training? 🎯</div>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <h4>Most In-Demand Skill For Office & Corporate Jobs</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-chart-line"></i>
+          <h4>High Demand in Companies</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-user-tie"></i>
+          <h4>Improve Your Job Opportunities & Career Growth</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-handshake"></i>
+          <h4>Useful For All Office & Corporate Jobs</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-certificate"></i>
+          <h4>Certificate Available</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <h4>Experienced Trainers</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-laptop"></i>
+          <h4>Practical Training</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-hourglass-half"></i>
+          <h4>Flexible Timings</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-people-group"></i>
+          <h4>Small Batches</h4>
+        </div>
+        <div class="highlight-item">
+          <i class="fa-solid fa-headset"></i>
+          <h4>Doubt Support</h4>
+        </div>
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="section-title">
+        <h2>Why This Course Is Useful?</h2>
+        <p> Professional training that helps students, job seekers and working professionals. </p>
+      </div>
+      <div class="feature-wrap">
+        <div class="feature-box">
+          <i class="fa-solid fa-briefcase"></i>
+          <h4>Office Job Skills</h4>
+          <p>Most in-demand skills required in companies and offices.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fa-solid fa-chart-line"></i>
+          <h4>Career Growth</h4>
+          <p>Improve job opportunities and salary growth with Excel expertise.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fa-solid fa-user-graduate"></i>
+          <h4>Practical Training</h4>
+          <p>Hands-on live projects and real company work examples.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fa-solid fa-certificate"></i>
+          <h4>Certificate</h4>
+          <p>Course completion certificate available after training.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="why-us">
+        <div class="section-title" style="padding-top:40px;">
+          <h2 style="color:white;">Why Choose WDEFI?</h2>
+          <p style="color:#ddd;"> Trusted training institute focused on practical skills and better career opportunities. </p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <h3>Experienced Trainers</h3>
+            <p>Learn from skilled trainers with practical industry experience.</p>
+          </div>
+          <div class="why-item">
+            <h3>Job Oriented Training</h3>
+            <p>Focused on skills that companies actually use in offices.</p>
+          </div>
+          <div class="why-item">
+            <h3>Real Practice</h3>
+            <p>Hands-on assignments, dashboards and office-related projects.</p>
+          </div>
+          <div class="why-item">
+            <h3>Doubt Support</h3>
+            <p>Regular support and guidance during and after classes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:0;">
+      <div class="cta" style="margin:60px 7%;">
+        <h2>Ready to Transform Your Career? 🎓</h2>
+        <p> Join hundreds of students who have improved their skills and landed better jobs. Start your Excel training journey today! </p>
+        <div class="btn-group">
+          <a href="https://wa.me/918882442611" class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp for Details
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor" class="btn btn-secondary" target="_blank">
+            Fill Registration Form
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-title">
+        <h2>Get in Touch</h2>
+        <p>Have questions? Reach out to us through any of these channels.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>📱 WhatsApp</h3>
+          <p>Quick response on WhatsApp for all queries and enrollment.</p>
+          <a href="https://wa.me/918882442611" target="_blank" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i> Chat Now
+          </a>
+        </div>
+        <div class="contact-box">
+          <h3>📧 Email</h3>
+          <p>Send us your queries and we will respond within 24 hours.</p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=excelsupport26@gmail.com" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-envelope"></i> Send Email
+          </a>
+        </div>
+        <div class="contact-box">
+          <h3>📝 Registration</h3>
+          <p> Fill out our registration form to get started with your training. </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScWv9sm5PTBxt6o0CcdWmrJsaULnAMIK9_61qNbCPHHa6_m8A/viewform?usp=publish-editor" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-file-alt"></i> Register Now
+          </a>
+        </div>
+        <div class="contact-box">
+          <h3>📍 Address</h3>
+          <p> The Welfare Development & Educational Foundation of India (WDEFI) </p>
+          <p> C-5, Satya Public School Road,<br> Qutub Vihar Phase-1, Near Dwarka Sec-19 B,<br> New Delhi - 110071 </p>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-primary">
+            <i class="fa-solid fa-location-dot"></i> View Location
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <a href="https://wa.me/918882442611" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p>© 2003-2026 The Welfare Development & Educational Foundation of India (WDEFI). All rights reserved.</p>
+    <p>Building Skills. Creating Opportunities. Transforming Lives.</p>
+  </footer>
 
 </body>
 </html>
